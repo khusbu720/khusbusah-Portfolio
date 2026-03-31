@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Khusbu Portfolio | Aesthetic Graphic & Web Developer</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #b7c0c1;
+            overflow-y: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 80px;
+            background: #b7c0c1;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #b026ff;
+            letter-spacing: -0.3px;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #2d2a3e;
+            font-weight: 500;
+            font-size: 16px;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #b026ff;
+            transform: translateY(-1px);
+        }
+
+        nav a.active {
+            color: #b026ff;
+            font-weight: 600;
+        }
+
+        .about-hero {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 30px 80px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 80px;
+        }
+
+        .about-text {
+            max-width: 600px;
+            margin-top: 80px;
+        }
+
+        .about-text h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #1f1a2e;
+            line-height: 1.2;
+        }
+
+        .about-text h1 span {
+            color: #b026ff;
+        }
+
+        .about-text .tagline {
+            font-size: 20px;
+            margin-bottom: 25px;
+            font-weight: 500;
+            color: #b026ff;
+            letter-spacing: 0.5px;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: #5a5475;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 50px;
+            margin: 35px 0;
+            padding: 20px 0;
+            border-top: 2px solid rgba(176, 38, 255, 0.2);
+            border-bottom: 2px solid rgba(176, 38, 255, 0.2);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #b026ff;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #5a5475;
+            margin-top: 5px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 18px;
+            margin: 35px 0 40px;
+        }
+
+        .btn-primary {
+            background: #b026ff;
+            color: white;
+            padding: 13px 34px;
+            border: none;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 40px;
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #951fda;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            padding: 13px 34px;
+            border: 2px solid #b026ff;
+            color: #b026ff;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            background: transparent;
+            border-radius: 40px;
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: #b026ff;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .socials {
+            display: flex;
+            gap: 22px;
+        }
+
+        .socials a {
+            text-decoration: none;
+        }
+
+        .socials i {
+            font-size: 27px;
+            color: #b026ff;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .socials i:hover {
+            color: #7a1ab3;
+            transform: scale(1.1);
+        }
+
+        .about-img {
+            flex-shrink: 0;
+            align-self: flex-start;
+            margin-top: -20px;
+        }
+
+        .about-img img {
+            width: 580px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            background: transparent;
+        }
+
+        .what-i-do {
+            max-width: 1400px;
+            margin: 40px auto 80px;
+            padding: 0 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1f1a2e;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2 span {
+            color: #b026ff;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #b026ff, #d16bff);
+            border-radius: 3px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #5a5475;
+            max-width: 600px;
+            margin: 25px auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 30px 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .circle-icon {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 25px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(176, 38, 255, 0.1), rgba(176, 38, 255, 0.05));
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .circle-icon::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(135deg, #b026ff, #d16bff, #b026ff);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .service-card:hover .circle-icon::before {
+            opacity: 1;
+            animation: rotate 2s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(176, 38, 255, 0.3);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(176, 38, 255, 0.1);
+            }
+        }
+
+        .service-card:hover .circle-icon {
+            animation: none;
+            transform: scale(1.08);
+            background: linear-gradient(135deg, rgba(176, 38, 255, 0.2), rgba(176, 38, 255, 0.1));
+        }
+
+        .circle-icon i {
+            font-size: 45px;
+            color: #b026ff;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .circle-icon i {
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1f1a2e;
+            margin-bottom: 12px;
+        }
+
+        .service-card:hover h3 {
+            color: #b026ff;
+        }
+
+        .service-card p {
+            font-size: 13px;
+            color: #5a5475;
+            line-height: 1.6;
+        }
+
+        @media(max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media(max-width: 1100px) {
+            header {
+                padding: 18px 40px;
+            }
+
+            nav a {
+                margin: 0 12px;
+                font-size: 14px;
+            }
+
+            .about-hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 40px 40px;
+                gap: 30px;
+                align-items: center;
+            }
+
+            .about-text {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 20px;
+            }
+
+            .about-text h1 {
+                font-size: 48px;
+            }
+
+            .stats {
+                justify-content: center;
+                gap: 40px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .socials {
+                justify-content: center;
+            }
+
+            .about-img {
+                align-self: center;
+                margin-top: 0;
+                order: -1;
+            }
+
+            .about-img img {
+                width: 420px;
+            }
+
+            .what-i-do {
+                padding: 0 40px;
+            }
+
+            .section-header h2 {
+                font-size: 36px;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                max-width: 450px;
+                margin: 0 auto;
+            }
+
+            .circle-icon {
+                width: 100px;
+                height: 100px;
+            }
+
+            .circle-icon i {
+                font-size: 40px;
+            }
+        }
+
+        @media(max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 13px;
+            }
+
+            .about-hero {
+                padding: 20px 20px 30px;
+            }
+
+            .about-text {
+                margin-top: 10px;
+            }
+
+            .about-text h1 {
+                font-size: 36px;
+            }
+
+            .about-text .tagline {
+                font-size: 16px;
+            }
+
+            .about-text p {
+                font-size: 14px;
+            }
+
+            .stats {
+                gap: 25px;
+                flex-wrap: wrap;
+            }
+
+            .stat-number {
+                font-size: 24px;
+            }
+
+            .about-img img {
+                width: 320px;
+            }
+
+            .btn-primary,
+            .btn-outline {
+                padding: 10px 24px;
+                font-size: 14px;
+            }
+
+            .what-i-do {
+                padding: 0 20px;
+                margin: 30px auto;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .service-card h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Khusbu</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="skill.html">Skills</a>
+            <a href="education.html">Educations</a>
+            <a href="contact.html">Contacts</a>
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <div class="about-text">
+            <h1>About <span>Me</span></h1>
+            <div class="tagline">Aesthetic Graphic & Web Developer</div>
+
+            <p>
+                I'm Khusbu Sah, an Aesthetic Graphic & Web Developer with a passion for creating visually captivating
+                designs and seamless digital experiences. With a keen eye for detail and love for clean aesthetics,
+                I help brands and individuals bring their visions to life through beautiful, functional websites and
+                graphics.
+            </p>
+
+            <p>
+                My approach combines creative design thinking with technical expertise to deliver solutions that not
+                only
+                look stunning but also perform exceptionally. Every project I work on is crafted with care, precision,
+                and a deep commitment to quality.
+            </p>
+
+            <div class="buttons">
+                <a href="contact.html" class="btn-primary">Contact Me</a>
+                <a href="work.html" class="btn-outline">View Work</a>
+            </div>
+
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/khusbu-sah-a560943a1/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/khusbu.720/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fdashboard" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="about-img">
+            <img src="image/khusbu 2.png" alt="Khusbu sah profile">
+        </div>
+    </section>
+
+    <div class="what-i-do">
+        <div class="section-header">
+            <h2>What <span>I Do</span></h2>
+            <p>I create beautiful digital experiences that leave a lasting impression</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="circle-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3>Graphic Design</h3>
+                <p>Creating stunning visual identities, logos, branding materials, and creative designs.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="circle-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Building responsive, fast, and modern websites with clean code for exceptional experiences.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="circle-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Responsive Design</h3>
+                <p>Ensuring your website looks perfect on desktops, tablets, and mobile devices.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="circle-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>UI/UX Design</h3>
+                <p>Designing intuitive interfaces that provide seamless experiences for users.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get elements
+        const workButton = document.querySelector('.btn-outline');
+        
+        // Contact button is now an anchor tag with href="contact.html", so no onclick needed
+        // View Work button - redirect to projects page (or show alert if page doesn't exist)
+        if (workButton) {
+            workButton.onclick = (e) => {
+                e.preventDefault();
+                alert("🎨 My creative projects are coming soon! Stay tuned.");
+                // If you have a work.html page, uncomment the line below:
+                // window.location.href = 'work.html';
+            };
+        }
+        
+        // Social icons already have direct links via <a> tags
+        console.log("About page ready - Social links open directly, Contact button redirects to contact page!");
+    </script>
+
+</body>
+
+</html>

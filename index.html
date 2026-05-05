@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -176,10 +175,14 @@
             transform: scale(1.1);
         }
 
+        /* FIXED: Image container with proper alignment and no cropping */
         .hero-img {
             flex-shrink: 0;
-            align-self: flex-end;
-            margin-bottom: -25px;
+            align-self: center;      /* Changed from flex-end to center to avoid top cut-off */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0;        /* Removed negative margin that was causing shift */
         }
 
         .hero-img img {
@@ -191,6 +194,8 @@
             border-radius: 0;
             box-shadow: none;
             background: transparent;
+            object-fit: contain;      /* Ensures full image is visible without cropping */
+            object-position: center top; /* Focus on center-top, but keeps entire head visible */
         }
 
         @media(max-width: 1100px) {
@@ -298,6 +303,13 @@
                 font-size: 14px;
             }
         }
+
+        /* Additional small fix for very large screens: prevent any overflow cut */
+        @media(min-width: 1400px) {
+            .hero-img img {
+                width: 600px;
+            }
+        }
     </style>
 </head>
 
@@ -350,7 +362,7 @@
 
     <script>
         // Simple console log to confirm everything is working
-        console.log("Portfolio ready — CV downloads directly, social links open in new tabs!");
+        console.log("Portfolio ready — CV downloads directly, social links open in new tabs! Image cropping fixed: head fully visible now.");
         
         // Optional: Add a small success message when CV is downloaded
         const cvLink = document.querySelector('.btn-outline[download]');
